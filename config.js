@@ -24,16 +24,60 @@ var respecConfig =
     {
       name: "Linda van den Brink",
       company: "Geonovum",
-      companyURL: "http://www.geonovum.nl/",
+      companyURL: "https://www.geonovum.nl/",
     },
   ],
   authors: 
   [
     {
-      name: "Linda van den Brink",
-      company: "Geonovum",
-      companyURL: "http://www.geonovum.nl/",
-},
+      name: "Vincent van Atena",
+      company: "Kadaster",
+      companyURL: "https://www.kadaster.nl/",
+    },
+    {
+      name: "Tony Baving",
+      company: "Kadaster",
+      companyURL: "https://www.kadaster.nl/",
+    },
+    {
+      name: "Willem van Hinsbergh",
+      company: "Kadaster",
+      companyURL: "https://www.kadaster.nl/",
+    },
+    {
+      name: "Marc Post",
+      company: "Kadaster",
+      companyURL: "https://www.kadaster.nl/",
+    },
+    {
+      name: "Bertjan Zwerver",
+      company: "Kadaster",
+      companyURL: "https://www.kadaster.nl/",
+    },
+    {
+      name: "Jantien Stoter",
+      company: "Kadaster",
+      companyURL: "https://www.kadaster.nl/",
+      extras: [{
+        name:  "TU Delft",
+        href:  "https://www.tudelft.nl",
+      }],
+    },
+    {
+      name: "Tom Commandeur",
+      company: "TU Delft",
+      companyURL: "https://www.tudelft.nl/",
+    },
+    {
+      name: "Balázs Dukai",
+      company: "TU Delft",
+      companyURL: "https://www.tudelft.nl/",
+    },
+    {
+      name: "Ravi Peters",
+      company: "TU Delft",
+      companyURL: "https://www.tudelft.nl/",
+    },
   ],
   shortName: "prod",
   github: "https://github.com/geonovum/3dbasisvoorziening",
