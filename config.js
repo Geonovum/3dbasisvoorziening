@@ -30,7 +30,7 @@ var respecConfig =
   authors: 
   [
     {
-      name: "Vincent van Atena",
+      name: "Vincent van Altena",
       company: "Kadaster",
       companyURL: "https://www.kadaster.nl/",
     },
