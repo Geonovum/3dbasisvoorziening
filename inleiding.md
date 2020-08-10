@@ -1,47 +1,54 @@
 # Inleiding
 
-3D-stadsmodellen (en 3D terreinmodellen) worden steeds meer gebruikt bij het plannen en beheren van onze leefomgeving. Recente ontwikkelingen in technieken voor het inwinnen van 3D-hoogte-informatie, LiDAR en fotogrammetrie, hebben het relatief eenvoudig gemaakt om 3D-stadsmodellen automatisch te reconstrueren en deze data te gebruiken voor bijvoorbeeld planning en omgevingssimulaties. 
+Driedimensionale (3D) stadsmodellen en 3D terreinmodellen worden steeds meer gebruikt bij het plannen en beheren van onze leefomgeving. Recente ontwikkelingen in technieken voor het inwinnen van 3D-hoogte-informatie, LiDAR en fotogrammetrie, hebben het relatief eenvoudig gemaakt om 3D-stadsmodellen automatisch te reconstrueren en deze data te gebruiken voor bijvoorbeeld planning en omgevingssimulaties. 
 
-De huidige 3D stadsmodellen die door verschillende organisaties worden geproduceerd, verschillen echter nog steeds sterk vanwege verschillen in acquisitiemethoden, verschillen in applicaties waarvoor de 3D-gegevens worden ingewonnen, verschillen in datastructuren, formaten enz.
+De huidige 3D stadsmodellen die door verschillende organisaties worden geproduceerd, verschillen echter nog steeds sterk vanwege verschillen in acquisitiemethoden, verschillen in applicaties waarvoor de 3D-gegevens worden ingewonnen, verschillen in datastructuren, bestandsformaten, enzovoort.
 
 Daarom verschillen 3D-stadsmodellen (die meer omvatten dan 3D-gebouwen) vaak sterk van elkaar. Bovendien is er doorgaans geen plan om de eenmaal gegenereerde gegevens actueel te houden. Het gevolg is dat 3D-stadsmodellen geen deel uitmaken van de reguliere gegevensinfrastructuren en deze gegevens worden daardoor nog steeds onvoldoende gebruikt in besluitvormingsprocessen van de overheid.
 
-Om actuele 3D-gegevens over grootschalige topografie uniform beschikbaar te hebben voor diverse overheidsprocessen, zou deze, vanuit technisch oogpunt, het beste kunnen worden ingewonnen als onderdeel van de BGT en BAG en de verantwoordelijkheid zijn van al deze verschillende bronhouders. Maar op dit moment is het niet haalbaar en ook niet wenselijk voor alle BAG en BGT bronhouders om aanvullende 3D-gegevens te verzamelen.
+Om actuele 3D gegevens over grootschalige (dat wil zeggen, zeer gedetailleerde) topografie uniform beschikbaar te hebben voor diverse overheidsprocessen, zou deze, vanuit technisch oogpunt, het beste kunnen worden ingewonnen als onderdeel van de [Basisregistratie Grootschalige Topografie](https://www.geobasisregistraties.nl/basisregistraties/bgt/basisregistratie-grootschalige-topografie) (BGT) en [Basisregistratie Adressen en Gebouwen](https://www.geobasisregistraties.nl/basisregistraties/adressen-en-gebouwen) (BAG) onder de verantwoordelijkheid van de verschillende bronhouders van deze gegevens. Maar op dit moment is het niet haalbaar en ook niet wenselijk voor alle BAG en BGT bronhouders om aanvullende 3D-gegevens te verzamelen.
 
-Daarom heeft het Kadaster een 3D basisvoorziening ingericht om, vooruitlopend op een 3D BAG/BGT in de (verre) toekomst, actuele 3D gegevens voor heel Nederland beschikbaar te stellen. In deze voorziening worden 3D basisgegevens gereconstrueerd op basis van BGT en BAG. Dit gebeurt op een volledig automatische wijze. De 3D gegevens worden landsdekkend gereconstrueerd en beschikbaar gesteld in de open standaard CityJSON via PDOK. De 3D basisvoorziening die we in zomer 2020 beschikbaar stellen, is gebaseerd op zowel puntenwolken gegenereerd uit luchtfoto’s (inwin jaar 2018) als AHN3 (ingewonnen tussen 2014 en 2019). De 3D basisvoorziening zorgt ook voor beheer en periodieke updates, die aansluit op andere informatie-initiatieven zoals Dis-Geo en de Samenhangende Object Registratie (SOR).
+Daarom heeft het Kadaster een 3D basisvoorziening ingericht om, vooruitlopend op een 3D BAG/BGT in de (verre) toekomst, actuele 3D gegevens voor heel Nederland beschikbaar te stellen. De 3D basisgegevens in deze voorziening zijn gereconstrueerd op basis van BGT en BAG. Dit gebeurt op een volledig automatische wijze. De 3D gegevens worden landsdekkend, dat wil zeggen voor heel Nederland, gereconstrueerd en beschikbaar gesteld in de open standaard [CityJSON](https://www.cityjson.org) via het overheidsplatform voor open geoinformatie, [PDOK](https://www.pdok.nl). De 3D basisvoorziening die in de zomer van 2020 beschikbaar is gekomen, is gebaseerd op zowel puntenwolken gegenereerd uit luchtfoto’s (ingewonnen in 2018) als Actueel Hoogtebestand Nederland (AHN) versie 3 (ingewonnen tussen 2014 en 2019). De 3D basisvoorziening zorgt ook voor beheer en periodieke updates van de 3D gegevens, en sluit daarbij aan op andere informatie-initiatieven zoals [Doorontwikkeling in Samenhang](https://www.geobasisregistraties.nl/basisregistraties/doorontwikkeling-in-samenhang) (DiSGeo) en de daarbij behorende [samenhangende objectenregistratie](https://www.geobasisregistraties.nl/basisregistraties/doorontwikkeling-in-samenhang/objectenregistratie) (SOR).
 
-Dit is een eerste versie van het 3D Basisbestand Volledig. We zijn benieuwd naar de gebruikerservaringen en de mogelijke onvolkomenheden om het bestand te verbeteren.
+Dit document beschrijft een eerste versie van het 3D Basisbestand Volledig. We zijn benieuwd naar de gebruikerservaringen en de mogelijke onvolkomenheden om het bestand te verbeteren.
 
 ## De 3D Basisvoorziening
 
 De 3D Basisvoorziening bestaat uit drie producten die allemaal automatisch worden gegenereerd:
 
-1. het 3D Basisbestand Volledig (combinatie van LoD1.2 gebouwen + terrein (en bruggen))
-1. het  3D Basisbestand Gebouwen (LoD1.3, met daaraan gekoppeld attributen die de kwaliteit van ieder gebouwmodel beschrijven)
-1. het 3D Hoogtestatistieken Gebouwen
+1. Het 3D Basisbestand Volledig: een combinatie van LoD1.2 gebouwen, terrein en bruggen.
+1. Het 3D Basisbestand Gebouwen: LoD1.3 gebouwen, met daaraan gekoppeld attributen die de kwaliteit van ieder gebouwmodel beschrijven.
+1. Het 3D Hoogtestatistieken Gebouwen: tweedimensionale (2D) gebouwen waaraan verschillende hoogte-waarden zijn toegekend.
 
-<aside class="note">LoD (Level of Detail) beschrijft  het detailniveau waarop de hoogte van gebouwen beschikbaar is. Dit wordt in figuur 3 nader toegelicht.</aside>
+<aside class="note"><b>LoD</b> (Level of Detail) beschrijft  het detailniveau waarop de hoogte van gebouwen beschikbaar is. Dit wordt in <a href="#lod">figuur 3</a> nader toegelicht.</aside>
 
-<figure>
-    <figcaption>visualisatie van data uit het 3D Basisbestand Volledig</figcaption>
+### 3D Basisbestand Volledig
+
+<figure id="3dvolledig">
     <img src="media/image4.png"/>
+    <figcaption>visualisatie van data uit het 3D Basisbestand Volledig</figcaption>
 </figure>
 
-Het product 3D Basisbestand Volledig (een combinatie van LoD1.2 gebouwen + terrein (en bruggen)) dat nu beschikbaar is, bestaat uit terreinvlakken, gegenereerd uit BGT maaiveld-objecten met in het terrein geïntegreerde gebouwen.
+Het product 3D Basisbestand Volledig, een combinatie van LoD1.2 gebouwen met terrein en bruggen, bestaat uit terreinvlakken, gegenereerd uit BGT maaiveld-objecten met in het terrein geïntegreerde gebouwen.
 
-<figure>
-    <figcaption>gereconstrueerde brugvlakken</figcaption>
+<figure id="brugvlakken">
     <img src="media/image1.png"/>
+    <figcaption>gereconstrueerde brugvlakken</figcaption>
 </figure>
 
-De gebouwen in dit product worden gegenereerd door de BAG-geometrie van het gebouw op te trekken tot een enkele hoogte, d.w.z. de zogenaamde LoD1.2-weergave, zie onderstaande figuur. 
+De gebouwen in dit product worden gegenereerd door de BAG-geometrie van het gebouw op te trekken tot een enkele hoogte,  de zogenaamde LoD1.2-weergave (zie onderstaande figuur). Het horizontale grondvlak van de gebouwmodellen is altijd ingesteld op het laagste snijpunt met het maaiveld om te voorkomen dat het gebouw gaat zweven.
 
-<figure>
-    <figcaption>Levels of Detail voor gebouwen ( F. Biljecki, yyyy)</figcaption>
+<figure id="lod">
     <img src="media/image3.png"/>
+    <figcaption>Levels of Detail voor gebouwen (F. Biljecki, <a href="https://filipbiljecki.com/publications/2016_ceus_improved_lod.pdf">An improved LOD specification for 3D building models)</a></figcaption>
 </figure>
 
-Het horizontale grondvlak van de gebouwmodellen is altijd ingesteld op het laagste snijpunt met het maaiveld om te voorkomen dat het gebouw gaat zweven.
-De twee andere producten worden later dit jaar beschikbaar gesteld. Het 3D Basisbestand Gebouwen bevat blok-modellen waarbij aanzienlijke hoogtesprongen binnen een gebouw in het model worden onderscheiden (conform LoD1.3). Denk bijvoorbeeld aan een kerk met met een toren of een huis met een aangebouwde schuur.
+### 3D Basisbestand Gebouwen
+Het 3D Basisbestand Gebouwen bevat blok-modellen waarbij aanzienlijke hoogtesprongen binnen een gebouw in het model worden onderscheiden (conform LoD1.3). Denk bijvoorbeeld aan een kerk met met een toren of een huis met een aangebouwde schuur.
 
-Het product 3D Hoogtestatistieken Gebouwen bevat de 2D BAG-geometrieën van gebouwen waaraan verschillende hoogte-waarden zijn toegekend. Deze verschillende hoogte-waarden representeren verschillende referentiehoogten die berekend worden op basis van verschillende statistische parameters van de hoogtepunten die zich binnen een BAG polygoon bevinden. Afhankelijk van de toepassing kan een gebruiker beslissen welke referentiehoogte moet worden gebruikt om het 3D model te reconstrueren. Het bestand 3D Hoogtestatistieken Gebouwen komt zowel voor LoD1.2 als voor LoD1.3 beschikbaar. In dat laatste geval is de geometrie opgeknipt in verschillende delen op basis van hoogtesprongen.
+Dit product wordt later in 2020 beschikbaar gesteld. 
+
+### 3D Hoogtestatistieken Gebouwen
+Het product 3D Hoogtestatistieken Gebouwen bevat de 2D BAG-geometrieën van gebouwen waaraan verschillende hoogte-waarden zijn toegekend, zoals hoogste dakrand. Deze verschillende hoogte-waarden representeren verschillende referentiehoogten die berekend worden op basis van verschillende statistische parameters van de hoogtepunten die zich binnen een BAG polygoon bevinden. Afhankelijk van de toepassing kan een gebruiker beslissen welke referentiehoogte moet worden gebruikt om het 3D model te reconstrueren. Het bestand 3D Hoogtestatistieken Gebouwen komt zowel voor LoD1.2 als voor LoD1.3 beschikbaar. In dat laatste geval is de geometrie opgeknipt in verschillende delen op basis van hoogtesprongen.
+
+Dit product wordt later in 2020 beschikbaar gesteld. 

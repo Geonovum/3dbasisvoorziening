@@ -1,19 +1,19 @@
 # Semantisch model
 
-De data wordt semantisch gemodelleerd volgens de klassen van CityJSON (zie hoofdstuk 4). CityJSON bevat de volgende klassen waar de gebruikte BGT en BAG klassen onder vallen:
+De data die in de 3D basisvoorziening beschikbaar wordt gesteld, volgt het semantisch model zoals gedefinieerd in [CityGML 2.0](https://www.ogc.org/standards/citygml) en gebruikt door CityJSON (zie [Hoofdstuk 4](#formaat)). CityJSON bevat de volgende klassen waar de gebruikte BGT en BAG klassen onder vallen:
 
-- LandUse 
-- GenericCityObject
-- Building
-- Plantcover
-- Bridge
-- Road
-- WaterBody
+- `LandUse`
+- `GenericCityObject`
+- `Building`
+- `Plantcover`
+- `Bridge`
+- `Road`
+- `WaterBody`
 
-De oorspronkelijke BAG en BGT attributen zijn nog aanwezig samen met enkele andere extra attributen die nodig zijn voor het proces. Zo is voor de BAG een extra attribuut gecreëerd om na validatie van de vlakken het oorspronkelijke BAG ID weer terug te zetten. 
+De oorspronkelijke BAG en BGT gegevens zijn nog aanwezig samen met enkele andere extra attributen die nodig zijn voor het ontwikkelproces van de 3D bestanden. Zo is voor de BAG een extra attribuut gecreëerd om na controle van de vlakken het oorspronkelijke BAG ID opnieuw toe te voegen aan elk object. 
 
-De brugdelen van de BGT zijn samengevoegd voor het proces en komen dus niet meer overeen met de delen in de BGT. 
+De brugdelen van de BGT zijn samengevoegd tot één brugobject en komen dus niet meer overeen met de afzonderlijke delen van de brug, zoals die in de BGT zijn opgenomen. 
 
-Voor het reconstrueren van gebouwen is gekozen voor de BAG omdat de BAG geometrien de gebouwen van bovenaf modelleren en het meest geschikt is om op te trekken op basis van hoogtes uit luchtfoto’s (die ook van bovenaf worden ingewonnen). 
+Voor het maken van de 3D geometrie van gebouwen is de BAG als basis genomen, omdat de BAG geometriën de gebouwen van bovenaf modelleren en het meest geschikt zijn om op te trekken op basis van hoogtes uit luchtfoto’s (die ook van bovenaf worden ingewonnen). 
 
-BAG-panden en omringende BGT-terreinen sluiten topologisch niet altijd. Om toch een waterdicht terrein te hebben,  is het BGT pand object meegenomen als terrein (als BGT pand object gemodelleerd met een 3D vlak).
+BAG-panden en omringende BGT-terreinen sluiten topologisch niet altijd perfect op elkaar aan. Om dit op te lossen is de BGT representatie van de panden meegenomen als terrein (als BGT pand object gemodelleerd met een 3D vlak).

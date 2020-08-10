@@ -91,5 +91,13 @@ var respecConfig =
       date: "October 2012",
       publisher: "The Internet Engineering Task Force",
     },
+    "CityGML2": {
+        href: "https://portal.opengeospatial.org/files/?artifact_id=47842",
+        title:
+          "OGC City Geography Markup Language (CityGML) Encoding Standard",
+        authors: ["Gerhard Gröger", "Thomas H. Kolbe", "Claus Nagel", "Karl-Heinz Häfele"],
+        date: "04 April 2012",
+        publisher: "Open Geospatial Consortium",
+      },
   },
 };
