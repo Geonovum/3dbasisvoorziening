@@ -13,12 +13,12 @@
 
 var respecConfig = 
 {
-  specStatus: "GN-WV",
+  specStatus: "GN-BASIS",
   specType: "AL",
   pubDomain: "3dbv",
-//publishDate: "2020-01-17",
-//  previousPublishDate: "2019-07-15",
-//  previousMaturity: "GN-VV",
+  publishDate: "2020-09-03",
+  previousPublishDate: "2020-07-16",
+  previousMaturity: "GN-BASIS",
   editors: 
   [
     {
