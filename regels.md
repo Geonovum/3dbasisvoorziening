@@ -9,6 +9,7 @@ Brondata|Toepassing|Peildatum / inwinperiode
 BGT|Terrein|01-01-2019
 BAG|Gebouwen|01-01-2019
 Luchtfoto's|hoogtegegevens|winter 2018
+Luchtfoto's |infraroodgegevens ten behoeve classificatie van hoge vegetatie|zomer 2018
 
 ## Voorbewerking van BAG en BGT
 Om de objecten uit de BAG en de BGT als input te kunnen gebruiken voor het automatische reconstructieproces zijn een aantal voorbewerkingen uitgevoerd. Hierbij werden de objecten gevalideerd en verrijkt met informatie. Waar nodig werden de geometrieën van de objecten geïntegreerd met de geometrie van omliggende objecten. Hierbij moet worden opgemerkt dat niet alle geometrische bewerkingen correcties zijn op de BGT, maar dat het gaat om het geschikt maken van de data voor het 3D reconstructieproces. Hierdoor zijn de 2D objecten niet altijd meer dezelfde als in de oorspronkelijke BGT en BAG. 
@@ -48,7 +49,7 @@ De nauwkeurigheid van de resulterende hoogte wordt onder andere door de overlap 
 </ul>
 </aside>
 
-In een tweede stap wordt er een Digital Surface Model (DSM), een digitaal model van het aardoppervlak van Nederland, gegenereerd op basis van de verkregen puntenwolken. Dit 2.5D model bevat voor elke gedefinieerde pixel in het grid één hoogtewaarde. Deze waarde wordt bepaald door de meest betrouwbare hoogste waarde te nemen. Gekozen is voor een pixelmaat van 20cm, zodat elke vierkante meter maximaal 25 punten bevat. De nodata gebieden worden niet geïnterpoleerd.
+In een tweede stap wordt er een Digital Surface Model (DSM), een digitaal model van het aardoppervlak van Nederland, gegenereerd op basis van de verkregen puntenwolken. Dit DSM is een 2.5D hoogtemodel dat wordt opgeslagen als een grid met een pixelmaat van 20 centimeter. Elke pixel in dit grid krijgt in principe één hoogtewaarde die wordt bepaald door de meest betrouwbare hoogste waarde te nemen. Voor sommige pixels is het echter niet mogelijk om de hoogtewaarde vast te stellen (bijvoorbeeld door reflectie op water of schaduwen op een gebouw). Voor deze pixels wordt geen interpolatie toegepast. Hierdoor bevat elke vierkante meter van het DSM maximaal 25 hoogtewaarden.
 
 Als laatste stap wordt het DSM automatisch geclassificeerd in de categorieën `gebouw`, `water`, `bruggen`, `hoge vegetatie`, `ground` en de restcategorie `not classified`. Hierbij wordt voor water en bruggen gebruik gemaakt van BGT polygonen en voor gebouwen van BAG polygonen. Voor de classificatie van `hoge vegetatie` is gebruik gemaakt van de infraroodgegevens van de lage resolutie zomervlucht van de Landelijke Voorziening Beeldmateriaal. In bosgebieden, waar het maaiveld niet automatisch kan worden gedetecteerd, wordt data uit het AHN gebruikt. De categorie `ground` (ook wel aan te duiden met Digital Terrain Model (DTM)) wordt uitgedund naar 4 punten per vierkante meter.
 

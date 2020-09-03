@@ -16,4 +16,4 @@ De brugdelen van de BGT zijn samengevoegd tot één brugobject en komen dus niet
 
 Voor het maken van de 3D geometrie van gebouwen is de BAG als basis genomen, omdat de BAG geometriën de gebouwen van bovenaf modelleren en het meest geschikt zijn om op te trekken op basis van hoogtes uit luchtfoto’s (die ook van bovenaf worden ingewonnen). 
 
-BAG-panden en omringende BGT-terreinen sluiten topologisch niet altijd perfect op elkaar aan. Om dit op te lossen is de BGT representatie van de panden meegenomen als terrein (als BGT pand object gemodelleerd met een 3D vlak).
+BAG-panden en omringende BGT-terreinen sluiten topologisch niet altijd perfect op elkaar aan. Hierdoor kunnen gaten ontstaan in het terrein model, wat kan leiden tot een onjuiste 3D-reconstructie van een gebouw. Om dit op te lossen is de BGT representatie van de panden toegevoegd aan de terreinobjecten. Hierdoor ontstaat een gesloten terreinmodel.
