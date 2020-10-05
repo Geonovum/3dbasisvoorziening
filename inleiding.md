@@ -44,11 +44,7 @@ De gebouwen in dit product worden gegenereerd door de BAG-geometrie van het gebo
 </figure>
 
 ### 3D Basisbestand Gebouwen
-Het 3D Basisbestand Gebouwen bevat blok-modellen waarbij aanzienlijke hoogtesprongen binnen een gebouw in het model worden onderscheiden (conform LoD1.3). Denk bijvoorbeeld aan een kerk met met een toren of een huis met een aangebouwde schuur.
-
-Dit product wordt later in 2020 beschikbaar gesteld. 
+Het 3D Basisbestand Gebouwen bevat blok-modellen waarbij aanzienlijke hoogtesprongen binnen een gebouw in het model worden onderscheiden (conform LoD1.3). Denk bijvoorbeeld aan een kerk met een toren of een huis met een aangebouwde schuur.
 
 ### 3D Hoogtestatistieken Gebouwen
-Het product 3D Hoogtestatistieken Gebouwen bevat de 2D BAG-geometrieën van gebouwen waaraan verschillende hoogte-waarden zijn toegekend, zoals hoogste dakrand. Deze verschillende hoogte-waarden representeren verschillende referentiehoogten die berekend worden op basis van verschillende statistische parameters van de hoogtepunten die zich binnen een BAG polygoon bevinden. Afhankelijk van de toepassing kan een gebruiker beslissen welke referentiehoogte moet worden gebruikt om het 3D model te reconstrueren. Het bestand 3D Hoogtestatistieken Gebouwen komt zowel voor LoD1.2 als voor LoD1.3 beschikbaar. In dat laatste geval is de geometrie opgeknipt in verschillende delen op basis van hoogtesprongen.
-
-Dit product wordt later in 2020 beschikbaar gesteld. 
+Het product 3D Hoogtestatistieken Gebouwen bevat de 2D BAG-geometrieën van gebouwen waaraan verschillende hoogte-waarden zijn toegekend, zoals hoogste dakrand. Deze verschillende hoogte-waarden representeren verschillende referentiehoogten die berekend worden op basis van verschillende statistische parameters van de hoogtepunten die zich binnen een BAG polygoon bevinden. Afhankelijk van de toepassing kan een gebruiker beslissen welke referentiehoogte moet worden gebruikt om het 3D model te reconstrueren. Het bestand 3D Hoogtestatistieken Gebouwen is (zoveel als mogelijk) in LoD1.3 beschikbaar. Daarbij is de geometrie opgeknipt in verschillende delen op basis van hoogtesprongen. Voor de situaties waarbij een reconstructie van LoD1.3 niet mogelijk is, is het bestand aangevuld met LoD1.2 geometrieën met minder diversiteit aan statistische waarden.

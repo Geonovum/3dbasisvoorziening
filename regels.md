@@ -72,3 +72,6 @@ De software genereert automatisch 3D-representaties op basis van 2D-topografie e
 Hiermee wordt een landsdekkend waterdicht (i.e. aansluitend) 3D terreinmodel verkregen, zonder overlap en gaten, waarbij BGT-gebouwen geïntegreerd zijn in het maaiveld. Dit 3D terreinmodel kan vervolgens worden gebruikt als input voor bijvoorbeeld simulatiesoftware.
 
 De LoD1.2 gebouwen zijn gereconstrueerd op basis van hun BAG geometrie en de 3D puntenwolk, waarbij een maximale en minimale hoogte is gebruikt om een 3D volumegeometrie te construeren. De maximale hoogte is bepaald op basis van het 90 percentiel van de hoogtepunten die binnen een BAG geometrie vallen. Om te voorkomen dat gebouwen boven het maaiveld zweven wordt het laagste punt in het maaiveld dat door de BAG geometrie geraakt wordt gebruikt voor de bepaling van de hoogte van het grondvlak. 
+
+## LoD1.3 reconstructie
+<aside class="issue">TODO Input TUD. Hier ook benoemen dat als puntenwolk AHN is gebruikt en dat niet-te-reconstrueren gebouwen zijn toegevoegd uit LoD1.2.</aside>
