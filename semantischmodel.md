@@ -1,7 +1,7 @@
 # Semantisch model
 
 ## Inhoud van de 3D basisvoorziening
-De data die in de 3D basisvoorziening beschikbaar wordt gesteld, volgt het semantisch model zoals gedefinieerd in CityGML [[CityGML2]] en gebruikt door CityJSON (zie [Hoofdstuk 4](#formaat)). CityJSON bevat de volgende klassen waar de gebruikte BGT en BAG klassen onder vallen:
+De data die in de 3D basisvoorziening beschikbaar wordt gesteld, volgt het semantisch model zoals gedefinieerd in CityGML [[CityGML2]] en gebruikt door CityJSON (zie [Hoofdstuk 4](#data-formaat-en-beschikbaar-stellen)). CityJSON bevat de volgende klassen waar de gebruikte BGT en BAG klassen onder vallen:
 
 - `LandUse`
 - `GenericCityObject`
