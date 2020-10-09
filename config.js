@@ -17,9 +17,9 @@ var respecConfig =
   specStatus: "GN-WV",
   specType: "AL",
   pubDomain: "3dbv",
-  //publishDate: "2020-09-03",
-  //previousPublishDate: "2020-07-16",
-  //previousMaturity: "GN-BASIS",
+  //publishDate: "2020-10-09",
+  previousPublishDate: "2020-10-09",
+  previousMaturity: "GN-BASIS",
   editors: 
   [
     {
