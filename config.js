@@ -100,5 +100,14 @@ var respecConfig =
         date: "04 April 2012",
         publisher: "Open Geospatial Consortium",
       },
+      "Zebedin2008": {
+          href: "https://doi.org/10.1007/978-3-540-88693-8_64",
+          title:
+            "Fusion of feature-and area-based information for urban buildings modeling from aerial imagery.",
+          authors: ["Zebedin, L.", "Bauer, Joachim", "Karner, Konrad", "Bischof, Horst"],
+          date: "2008",
+          publisher: "European conference on computer vision",
+          pages: "873-886",
+        },
   },
 };

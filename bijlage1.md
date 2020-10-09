@@ -1,4 +1,4 @@
-# Bijlage: gebruikte parameters voor 3Dfier
+# Bijlage: Gebruikte parameters voor 3Dfier
 
 Voor het maken van de 3D Basisvoorziening is gebruik gemaakt van de volgende parameters voor 3Dfier:
 

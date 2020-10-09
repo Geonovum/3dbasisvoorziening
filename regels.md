@@ -53,7 +53,7 @@ In een tweede stap wordt er een Digital Surface Model (DSM), een digitaal model 
 
 Als laatste stap wordt het DSM automatisch geclassificeerd in de categorieën `gebouw`, `water`, `bruggen`, `hoge vegetatie`, `ground` en de restcategorie `not classified`. Hierbij wordt voor water en bruggen gebruik gemaakt van BGT polygonen en voor gebouwen van BAG polygonen. Voor de classificatie van `hoge vegetatie` is gebruik gemaakt van de infraroodgegevens van de lage resolutie zomervlucht van de Landelijke Voorziening Beeldmateriaal. In bosgebieden, waar het maaiveld niet automatisch kan worden gedetecteerd, wordt data uit het AHN gebruikt. De categorie `ground` (ook wel aan te duiden met Digital Terrain Model (DTM)) wordt uitgedund naar 4 punten per vierkante meter.
 
-Na deze stappen is de puntenwolk geschikt als input voor de 3Dfier software, zodat 3D geometrieën uit de 2D geometrieën van de BAG/BGT kunnen worden gegenereerd.
+Na deze stappen is de puntenwolk geschikt als input voor de 3dfier software, zodat 3D geometrieën uit de 2D geometrieën van de BAG/BGT kunnen worden gegenereerd.
 
 ## 3D reconstructie met 3dfier
 Voor het toekennen van hoogte aan de BGT maaiveldobjecten gebruiken we de open source software [3dfier](http://tudelft3d.github.io/3dfier/). Deze software is ontwikkeld in een samenwerking tussen [Kadaster](https://www.kadaster.nl/) en de [3D geoinformation](https://3d.bk.tudelft.nl) vakgroep van de [TU Delft](https://www.tudelft.nl/) en kan voor verschillende scenario’s ingezet worden. 
@@ -74,4 +74,24 @@ Hiermee wordt een landsdekkend waterdicht (i.e. aansluitend) 3D terreinmodel ver
 De LoD1.2 gebouwen zijn gereconstrueerd op basis van hun BAG geometrie en de 3D puntenwolk, waarbij een maximale en minimale hoogte is gebruikt om een 3D volumegeometrie te construeren. De maximale hoogte is bepaald op basis van het 90 percentiel van de hoogtepunten die binnen een BAG geometrie vallen. Om te voorkomen dat gebouwen boven het maaiveld zweven wordt het laagste punt in het maaiveld dat door de BAG geometrie geraakt wordt gebruikt voor de bepaling van de hoogte van het grondvlak. 
 
 ## LoD1.3 reconstructie
-<aside class="issue">TODO Input TUD. Hier ook benoemen dat als puntenwolk AHN is gebruikt en dat niet-te-reconstrueren gebouwen zijn toegevoegd uit LoD1.2.</aside>
+Bij de LoD1.3 reconstructie worden dakdelen met verschillende hoogtes gedetecteerd en als zodanig opgetrokken. Hierbij wordt een drempel hoogtesprong gebruikt van 3 meter, omdat dit ongeveer gelijk wordt geacht aan een verdieping.
+
+<figure>
+    <img src="media/image5.png"/>
+    <figcaption>de verschillende stappen in de LoD1.3 reconstructie methode</figcaption>
+</figure>
+
+Het LoD1.3 reconstructieproces gebeurt via de volgende stappen (zie ook Figuur 5)
+
+1.	Selecteer de hoogtepunten boven het BAG-polygoon. Hierbij worden alleen de punten gebruikt die als gebouw zijn geclassificeerd in de puntenwolk.
+1. 	Detecteer vlakken in de puntenwolk met behulp van een ‘region-growing’ algoritme om alle dakvlakken te identificeren. In deze stap worden ook punten verwijderd die zich op een muurvlak (gevel) bevinden of geen deel uitmaken van een vlak;
+1. 	Detecteer de omlijning van de dakvlakken met behulp van [α-shapes](https://doc.cgal.org/latest/Alpha_shapes_3/index.html) en een ‘region-growing’ lijndetectie-algoritme op de α-shape omlijning;
+1. 	Splits de BAG-polygoon op in dakdelen met behulp van de lijnen uit stap 3. De lijnen worden eerst geregulariseerd en dan samengevoegd met het BAG polygoon om tot een 2D-planaire partitie van het BAG-polygoon te komen. Deze partitie wordt vervolgens geoptimaliseerd met een methode die lijkt op die van Zebedin [[Zebedin2008]]. Het doel van deze optimalisatie is het behalen van een zo eenvoudig mogelijke opsplitsing die tegelijkertijd een zo klein mogelijke afwijking ten opzichte van de puntenwolk heeft.
+1. 	Trek elk dakdeel op tot zijn mediale hoogte.
+1.	Verwijder hoogtesprongen die kleiner zijn dan 3 meter.
+
+Voor deze reconstructie is gebruik gemaakt van het AHN3. Verder zijn de volgende opmerkingen van toepassing: 
+- Delen binnen een BAG polygoon waarvoor in het AHN3 alleen maaiveldpunten bestaan zijn van het gebouw afgeknipt. Dit komt bijvoorbeeld voor bij ondergrondse garages. 
+- Kassen / warenhuizen (uit TOP10NL) en andere grote gebouwen (oppervlakte >100 000 m2) zijn altijd gereconstrueerd in LoD1.2
+- Gebouwen die nieuwer zijn dan het AHN zijn gereconstrueerd als LoD1.2 op basis van de puntenwolken uit luchtfoto’s, evenals een klein aantal gebouwen dat om verschillende redenen niet kon worden gereconstrueerd als LoD1.3
+

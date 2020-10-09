@@ -1,4 +1,4 @@
-# Data-formaat en beschikbaarstellen
+# Data-formaat en beschikbaar stellen
 
 ## Data-formaat
 Het 3D Basisbestand Volledig en het 3D Basisbestand Gebouwen worden beschikbaar gesteld in [CityJSON](https://www.cityjson.org). De dataset 3D Hoogtestatistieken Gebouwen wordt beschikbaar gesteld in Geopackage (versie 1.2). 
