@@ -109,5 +109,13 @@ var respecConfig =
           publisher: "European conference on computer vision",
           pages: "873-886",
         },
+        "GeoPackage1.2": {
+            href: "https://portal.opengeospatial.org/files/12-128r15",
+            title:
+              "GeoPackage Encoding Standard",
+            authors: ["Jeff Yutzler", "Paul Daisey"],
+            date: "06 September 2018",
+            publisher: "Open Geospatial Consortium",
+          },
   },
 };

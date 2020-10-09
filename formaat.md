@@ -1,8 +1,9 @@
 # Data-formaat en beschikbaar stellen
 
 ## Data-formaat
-Het 3D Basisbestand Volledig en het 3D Basisbestand Gebouwen worden beschikbaar gesteld in [CityJSON](https://www.cityjson.org). De dataset 3D Hoogtestatistieken Gebouwen wordt beschikbaar gesteld in Geopackage (versie 1.2). 
+Het 3D Basisbestand Volledig en het 3D Basisbestand Gebouwen worden beschikbaar gesteld in [CityJSON](https://www.cityjson.org). De dataset 3D Hoogtestatistieken Gebouwen wordt beschikbaar gesteld in GeoPackage (versie 1.2) [[GeoPackage1.2]]. 
 
+### CityJSON
 CityJSON is een JSON codering van het [CityGML](https://www.ogc.org/standards/citygml) gegevensmodel (versie 2.0.0). CityGML is een open standaard en uitwisselingsformaat om digitale 3D-modellen van steden en landschappen te definiëren. CityGML is een officiële standaard van het Open Geospatial Consortium (OGC).
 
 CityJSON beschrijft zowel de geometrie als de semantiek van de meest gebruikte 3D-objecten (zoals gebouwen, wegen, rivieren, bruggen, vegetatie en stadsmeubilair) en legt daarbij de relaties tussen objecten vast. Het definieert ook verschillende standaard LoDs voor de 3D-objecten, waardoor meerdere detailniveaus van objecten voor uiteenlopende toepassingen en doeleinden kunnen worden weergegeven.
@@ -11,7 +12,10 @@ CityJSON is ontwikkeld om programmeurs optimaal te faciliteren in het lezen en b
 
 <aside class='note'>Voor het visualiseren en bewerken van CityJSON files is verschillende software beschikbaar. Een lijst van software die CityJSON ondersteunt is hier te vinden: <a href='https://www.cityjson.org/software/'>https://www.cityjson.org/software/</a>.</aside> 
 
-<aside class="issue">TODO informatie over GeoPackage toevoegen.</aside>
+### GeoPackage
+GeoPackage is een op SQLite gebaseerde internationale open standaard van het OGC, waarmee je geografische informatie kunt uitwisselen. Voordelen van het uitwisselen van data in GeoPackage is dat je een GeoPackage direct kunt openen, zonder de data te converteren. Het is gemakkelijk en zonder veel achtergrondkennis te gebruiken. Ook is de bestandsomvang kleiner dan bijvoorbeeld een GML bestand.
+
+GeoPackage is geen 3D formaat, maar omdat het 3D Hoogtestatistieken Gebouwen product in feite een 2D bestand met 3D hoogteinformatie is, is GeoPackage hiervoor een geschikter formaat dan CityJSON. 
 
 ## Beschikbaarheid
 Het 3D Basisbestand Volledig, het 3D Basisbestand Gebouwen en de 3D Hoogtestatistieken Gebouwen zijn beschikbaar via een [downloadservice op PDOK](https://www.pdok.nl/3d-basisvoorziening). De 3D Hoogtestatistieken Gebouwen zijn te downloaden als één landelijk bestand. Het 3D Basisbestand Volledig en het 3D Basisbestand Gebouwen kunnen gedownload worden in afzonderlijke tegels (5km x 6km) die worden aangeboden ter selectie op een geïndexeerde kaart. 

@@ -37,7 +37,7 @@ Kenmerk|waarde|toelichting
 Ground Sampling Distance (GSD)|10cm| 
 Overlap in de strook|60%| 
 Overlap tussen de stroken|30%| 
-Vlieghoogte|+/- 1700m|groot deel van Nederland
+Vlieghoogte|+/- 1700m|grootste deel van Nederland
  |+/-  4300m|westelijk Nederland rondom Schiphol
 
 De nauwkeurigheid van de resulterende hoogte wordt onder andere door de overlap in de strook en de vlieghoogte bepaald. Voor punten die worden gegenereerd uit luchtfoto’s ingewonnen op een vlieghoogte van 1700m is dat 15cm; voor punten gebaseerd op beelden ingewonnen op een vlieghoogte van 4300m is dat 35cm (sigma-1).
@@ -93,5 +93,5 @@ Het LoD1.3 reconstructieproces gebeurt via de volgende stappen (zie ook Figuur 5
 Voor deze reconstructie is gebruik gemaakt van het AHN3. Verder zijn de volgende opmerkingen van toepassing: 
 - Delen binnen een BAG polygoon waarvoor in het AHN3 alleen maaiveldpunten bestaan zijn van het gebouw afgeknipt. Dit komt bijvoorbeeld voor bij ondergrondse garages. 
 - Kassen / warenhuizen (uit TOP10NL) en andere grote gebouwen (oppervlakte >100 000 m2) zijn altijd gereconstrueerd in LoD1.2
-- Gebouwen die nieuwer zijn dan het AHN zijn gereconstrueerd als LoD1.2 op basis van de puntenwolken uit luchtfoto’s, evenals een klein aantal gebouwen dat om verschillende redenen niet kon worden gereconstrueerd als LoD1.3
+- Gebouwen die nieuwer zijn dan het AHN zijn gereconstrueerd als LoD1.2 op basis van de puntenwolken uit luchtfoto’s.
 
