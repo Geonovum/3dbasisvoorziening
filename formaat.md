@@ -1,7 +1,7 @@
 # Data-formaat en beschikbaar stellen
 
 ## Data-formaat
-Het 3D Basisbestand Volledig en het 3D Basisbestand Gebouwen worden beschikbaar gesteld in [CityJSON](https://www.cityjson.org). De dataset 3D Hoogtestatistieken Gebouwen wordt beschikbaar gesteld in GeoPackage (versie 1.2) [[GeoPackage1.2]]. 
+Het 3D Basisbestand Volledig en het 3D Basisbestand Gebouwen worden beschikbaar gesteld in [CityJSON](https://www.cityjson.org) [[Ledoux2019]]. De dataset 3D Hoogtestatistieken Gebouwen wordt beschikbaar gesteld in GeoPackage (versie 1.2) [[GeoPackage1.2]]. 
 
 ### CityJSON
 CityJSON is een JSON codering van het [CityGML](https://www.ogc.org/standards/citygml) gegevensmodel (versie 2.0.0). CityGML is een open standaard en uitwisselingsformaat om digitale 3D-modellen van steden en landschappen te definiëren. CityGML is een officiële standaard van het Open Geospatial Consortium (OGC).

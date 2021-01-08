@@ -117,5 +117,12 @@ var respecConfig =
             date: "06 September 2018",
             publisher: "Open Geospatial Consortium",
           },
+          "Ledoux2019": {
+            href: "https://doi.org/10.1186/s40965-019-0064-0",
+            title: "CityJSON: a compact and easy-to-use encoding of the CityGML data model.",
+            authors: ["Hugo Ledoux", "Ken Arroyo Ohori", "Kavisha Kumar", "Balázs Dukai", "Anna Labetski", "Stelios Vitalis"],
+            date: "2019",
+            publisher: "Open Geospatial Data, Software and Standards 4 (4)",
+          }
   },
 };
