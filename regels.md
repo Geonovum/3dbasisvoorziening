@@ -84,7 +84,7 @@ Bij de LoD1.3 reconstructie worden dakdelen met verschillende hoogtes gedetectee
 Het LoD1.3 reconstructieproces gebeurt via de volgende stappen (zie ook Figuur 5)
 
 1.	Selecteer de hoogtepunten boven het BAG-polygoon. Hierbij worden alleen de punten gebruikt die als gebouw zijn geclassificeerd in de puntenwolk.
-1. 	Detecteer vlakken in de puntenwolk met behulp van een ‘region-growing’ algoritme om alle dakvlakken te identificeren. In deze stap worden ook punten verwijderd die zich op een muurvlak (gevel) bevinden of geen deel uitmaken van een vlak;
+1. 	Detecteer vlakken in de puntenwolk met behulp van een ‘region-growing’ algoritme om alle dakvlakken te identificeren. Dit is een vrij standaard algoritme, zoals bijvoorbeeld beschreven (als "surface growing") in [[Vosselman2010]]. In deze stap worden ook punten verwijderd die zich op een muurvlak (gevel) bevinden of geen deel uitmaken van een vlak;
 1. 	Detecteer de omlijning van de dakvlakken met behulp van [α-shapes](https://doc.cgal.org/latest/Alpha_shapes_3/index.html) en een ‘region-growing’ lijndetectie-algoritme op de α-shape omlijning;
 1. 	Splits de BAG-polygoon op in dakdelen met behulp van de lijnen uit stap 3. De lijnen worden eerst geregulariseerd en dan samengevoegd met het BAG polygoon om tot een 2D-planaire partitie van het BAG-polygoon te komen. Deze partitie wordt vervolgens geoptimaliseerd met een methode die lijkt op die van Zebedin [[Zebedin2008]]. Het doel van deze optimalisatie is het behalen van een zo eenvoudig mogelijke opsplitsing die tegelijkertijd een zo klein mogelijke afwijking ten opzichte van de puntenwolk heeft.
 1. 	Trek elk dakdeel op tot zijn mediale hoogte.

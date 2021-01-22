@@ -123,6 +123,15 @@ var respecConfig =
             authors: ["Hugo Ledoux", "Ken Arroyo Ohori", "Kavisha Kumar", "Balázs Dukai", "Anna Labetski", "Stelios Vitalis"],
             date: "2019",
             publisher: "Open Geospatial Data, Software and Standards 4 (4)",
-          }
+          },
+          "Vosselman2010": {
+            title: "Visualisation and structuring of point clouds. In: Airborne and terrestrial laser scanning, p. 45-81",
+            authors: ["G. Vosselman", "R. Klein"],
+            date: "2010",
+            isbn: "978-1904445-87-6",
+            pages: "45-81",
+            booktitle: "Airborne and terrestrial laser scanning",
+            publisher: "CRC Press",
+           }
   },
 };
