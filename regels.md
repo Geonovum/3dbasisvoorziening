@@ -1,15 +1,15 @@
 # Methodes van inwinning, voorbewerking en reconstructie
 
-Voor het reconstrueren van de 3D data is gebruik gemaakt van 2D geometrieën uit de BAG en BGT en van hoogtegegevens die verkregen zijn uit puntenwolken. Voor het vervaardigen van puntenwolken zijn luchtfoto’s uit de winter van 2018 gebruikt. Aangezien bronhouders van de BGT en de BAG ook gebruik maken van deze luchtfoto’s om hun bestanden te actualiseren, hebben we een latere peildatum voor de BAG en BGT gekozen. Dit zorgt voor een zo klein mogelijk actualiteitsverschil tussen de hoogtegegevens en 2D geometrieën. Zie Tabel 1 voor meer informatie.
+Voor het reconstrueren van de 3D data is gebruik gemaakt van 2D geometrieën uit de BAG en BGT en van hoogtegegevens die verkregen zijn uit puntenwolken. Voor het vervaardigen van puntenwolken zijn luchtfoto’s uit de winter van 2019 gebruikt. Aangezien bronhouders van de BGT en de BAG ook gebruik maken van deze luchtfoto’s om hun bestanden te actualiseren, hebben we een latere peildatum voor de BAG en BGT gekozen. Dit zorgt voor een zo klein mogelijk actualiteitsverschil tussen de hoogtegegevens en 2D geometrieën. Zie Tabel 1 voor meer informatie.
 
 **Tabel 1:** actualiteit en toepassing van de brondata
 
 Brondata|Toepassing|Peildatum / inwinperiode
 --------|----------|------------------------
-BGT|Terrein|01-01-2019
-BAG|Gebouwen|01-01-2019
-Luchtfoto's|hoogtegegevens|winter 2018
-Luchtfoto's |infraroodgegevens ten behoeve classificatie van hoge vegetatie|zomer 2018
+BGT|Terrein|01-01-2020
+BAG|Gebouwen|01-01-2020
+Luchtfoto's|hoogtegegevens|winter 2019
+Luchtfoto's |infraroodgegevens ten behoeve classificatie van hoge vegetatie|zomer 2019
 
 ## Voorbewerking van BAG en BGT
 Om de objecten uit de BAG en de BGT als input te kunnen gebruiken voor het automatische reconstructieproces zijn een aantal voorbewerkingen uitgevoerd. Hierbij werden de objecten gevalideerd en verrijkt met informatie. Waar nodig werden de geometrieën van de objecten geïntegreerd met de geometrie van omliggende objecten. Hierbij moet worden opgemerkt dat niet alle geometrische bewerkingen correcties zijn op de BGT, maar dat het gaat om het geschikt maken van de data voor het 3D reconstructieproces. Hierdoor zijn de 2D objecten niet altijd meer dezelfde als in de oorspronkelijke BGT en BAG. 
@@ -22,7 +22,7 @@ De belangrijkste geometrische bewerkingen zijn:
 
 Om de geometrische objecten te integreren met hun omgeving worden twee bewerkingen uitgevoerd: 
 - De topologie tussen verschillende hoogteniveaus wordt hersteld om 3D reconstructie mogelijk te maken. Hierbij worden waar nodig datapunten op gedeelde grenzen en bij kruisende objecten geïntroduceerd. Dit speelt met name voor overbruggingsdelen en bijzondere objecten.
-- Topologische fouten die problemen kunnen veroorzaken in het reconstructieproces, zoals overlappingen, gaten, en zgn. spikes (uitschieters), worden opgespoord en automatisch gecorrigeerd. Hierbij worden ongeclassificeerde objecten gecreëerd voor gaten in de BGT.
+- Topologische fouten die problemen kunnen veroorzaken in het reconstructieproces, zoals overlappen, gaten, en zgn. spikes (uitschieters), worden opgespoord en automatisch gecorrigeerd. Hierbij worden ongeclassificeerde objecten gecreëerd voor gaten in de BGT.
 
 <aside class='note'>
 Voor een goede 3D-reconstructie moeten de overbruggingssituaties voldoen aan <a href='http://imgeo.geostandaarden.nl/def/imgeo-object/overbruggingsdeel/overbruggingsdeel'>de standaard die voor de BGT is voorgeschreven</a>. Bovendien moeten de wegdelen op bruggen, die zijn gemodelleerd boven het maaiveld, aansluiten op de wegdelen die op maaiveldhoogte zijn gemodelleerd.</aside>
@@ -30,17 +30,16 @@ Voor een goede 3D-reconstructie moeten de overbruggingssituaties voldoen aan <a 
 ## Het genereren van de puntenwolken
 Voor de reconstructie van 2D naar 3D zijn hoogtegegevens nodig voor twee dingen: voor de hoogtebepaling van BAG-panden, en voor de hoogtebepaling van de maaiveldobjecten (BGT). Deze hoogte wordt verkregen door het toepassen van [semi-global matching](https://en.wikipedia.org/wiki/Semi-global_matching) op de stereofoto’s die ingewonnen worden in de [landelijke voorziening beeldmateriaal](https://www.beeldmateriaal.nl/). Deze voorziening koopt voor de overheidspartijen in Nederland landsdekkend beeldmateriaal in voor het bijhouden van de basisregistraties BAG, BGT en de Basisregistratie Topografie (BRT). Voor de hoogtebepaling uit beeldmateriaal worden de stereofoto’s van de wintervlucht gebruikt. 
 
-**Tabel 2:** Kenmerken stereofoto’s 2018
+**Tabel 2:** Kenmerken stereofoto’s 2019
 
 Kenmerk|waarde|toelichting
 -------|------|-----------
-Ground Sampling Distance (GSD)|10cm| 
-Overlap in de strook|60%| 
-Overlap tussen de stroken|30%| 
-Vlieghoogte|+/- 1700m|grootste deel van Nederland
- |+/-  4300m|westelijk Nederland rondom Schiphol
+Ground Sampling Distance (GSD)|3-10,8cm
+Overlap in de strook|60%
+Overlap tussen de stroken|30%
+Vlieghoogte|1000-4300m
 
-De nauwkeurigheid van de resulterende hoogte wordt onder andere door de overlap in de strook en de vlieghoogte bepaald. Voor punten die worden gegenereerd uit luchtfoto’s ingewonnen op een vlieghoogte van 1700m is dat 15cm; voor punten gebaseerd op beelden ingewonnen op een vlieghoogte van 4300m is dat 35cm (sigma-1).
+De nauwkeurigheid van de resulterende hoogte wordt onder andere door de overlap in de strook en de vlieghoogte bepaald.
 
 <aside class='note'>Voor meer technische achtergrondinformatie, zie deze artikelen: 
 <ul>
@@ -56,7 +55,7 @@ Als laatste stap wordt het DSM automatisch geclassificeerd in de categorieën `g
 Na deze stappen is de puntenwolk geschikt als input voor de 3dfier software, zodat 3D geometrieën uit de 2D geometrieën van de BAG/BGT kunnen worden gegenereerd.
 
 ## 3D reconstructie met 3dfier
-Voor het toekennen van hoogte aan de BGT maaiveldobjecten gebruiken we de open source software [3dfier](http://tudelft3d.github.io/3dfier/). Deze software is ontwikkeld in een samenwerking tussen [Kadaster](https://www.kadaster.nl/) en de [3D geoinformation](https://3d.bk.tudelft.nl) vakgroep van de [TU Delft](https://www.tudelft.nl/) en kan voor verschillende scenario’s ingezet worden. 
+Voor het toekennen van hoogte aan de BGT maaiveldobjecten gebruiken we de open source software [3dfier](http://tudelft3d.github.io/3dfier/) (versie 1.3). Deze software is ontwikkeld in een samenwerking tussen [Kadaster](https://www.kadaster.nl/) en de [3D geoinformation](https://3d.bk.tudelft.nl) vakgroep van de [TU Delft](https://www.tudelft.nl/) en kan voor verschillende scenario’s ingezet worden. 
 
 <aside class='note'>De gebruikte 3dfier configuratie voor de reconstructie van het 3D Basisbestand is opgenomen in <a href="#bijlage-gebruikte-parameters-voor-3dfier">bijlage A</a>.</aside>
 

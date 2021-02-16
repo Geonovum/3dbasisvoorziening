@@ -18,7 +18,7 @@ GeoPackage is een op SQLite gebaseerde internationale open standaard van het OGC
 GeoPackage is geen 3D formaat, maar omdat het 3D Hoogtestatistieken Gebouwen product in feite een 2D bestand met 3D hoogteinformatie is, is GeoPackage hiervoor een geschikter formaat dan CityJSON. 
 
 ## Beschikbaarheid
-Het 3D Basisbestand Volledig, het 3D Basisbestand Gebouwen en de 3D Hoogtestatistieken Gebouwen zijn beschikbaar via een [downloadservice op PDOK](https://www.pdok.nl/3d-basisvoorziening). De 3D Hoogtestatistieken Gebouwen zijn te downloaden als één landelijk bestand. Het 3D Basisbestand Volledig en het 3D Basisbestand Gebouwen kunnen gedownload worden in afzonderlijke tegels (5km x 6km) die worden aangeboden ter selectie op een geïndexeerde kaart. 
+Het 3D Basisbestand Volledig, het 3D Basisbestand Gebouwen en de 3D Hoogtestatistieken Gebouwen zijn beschikbaar via een [downloadservice op PDOK](https://www.pdok.nl/3d-basisvoorziening). De 3D Hoogtestatistieken Gebouwen zijn te downloaden als één landelijk bestand. Het 3D Basisbestand Volledig en het 3D Basisbestand Gebouwen kunnen gedownload worden in afzonderlijke tegels (van 5km x 6km, deze zip-bestanden bestaan uit 4 delen). U kunt deze tegels selecteren op een geïndexeerde kaart. 
 
 Objecten die in meerdere tegels vallen zijn weggeschreven in alle tegels waartoe zij behoren. Dit is gedaan om ervoor te zorgen dat een gebruiker niet naar de tegel hoeft te zoeken waarin een object dat een tegelgrens kruist, zich bevindt. De gekozen tegelgrootte sluit aan bij de kaartbladindeling van BRT (en AHN). 
 
