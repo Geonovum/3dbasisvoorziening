@@ -9,4 +9,3 @@ Er wordt nog actief gewerkt aan de reconstructie methode voor LoD1.3 gebouwen. M
 - De waarde voor `h_maaiveld` is incorrect (te laag) voor sommige gebouwen.
 - Niet alle 3D geometrieën zijn valide. Voor sommige gebouwen kunnen een of meerdere vlakken incorrect of niet aanwezig zijn. 
 - Gebouwen met een glazen dak zijn mogelijk niet realistisch gereconstrueerd.
-- Sommige gebouwen ontbreken of worden slechts door een hele kleine geometrie gerepresenteerd.

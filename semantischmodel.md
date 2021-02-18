@@ -80,7 +80,23 @@ Attribute Name | `lod13_2d` | `lod13_3d` | Description
 `versie_methode`|x|x|Versie van de gebouwreconstructiemethode.
 `kas_warenhuis`|x|x|Het gebouw is een kas of warenhuis (volgens Top10NL).
 `ondergronds_type`|x|x|Ondergrondklasse van het gebouw. Zie [tabel met waarden](#waardelijst-ondergronds_type). 
-`kwaliteits_klasse`|x|x|Indicatie van de mate van zekerheid dat de reconstructie realistisch is, vergeleken met het gebouw in de werkelijkheid. Zie [opmerking](#opmerkingen-over-attributen). 
+`kwaliteits_klasse`|x|x|Indicatie van de bruikbaarheid. Zie [tabel met waarden](#waardelijst-kwaliteits_klasse). 
 `rmse`|	|x|Gemiddelde kwadratische fout (RMSE) tussen de puntenwolk en het LoD1.3 model.
 `geom`|x|x|Geometie. Voor `lod13_2d` is dit de 2D dakonderdeel geometrie (Polygon, EPSG 28992). Voor `lod13_3d` is dit de 3D geometrie van het gebouw (MultiPolygonZ, EPSG 7415).
 `lod`|x|x|Het Level of Detail (detailniveau) van de gereconstrueerde geometrie. De defaultwaarde is 1.3, maar in sommige gevallen was dit niet mogelijk en is een LoD1.2 geometrie geproduceerd. 
+
+### Waardelijst kwaliteits_klasse
+waarde | betekenis
+-------|----------
+`keep` | Het model is te gebruiken. Dit geldt voor ongeveer 94% van de gebouwen.
+`discard` |	Het model is niet te gebruiken. Minder dan 1%.
+`review` |	De kwaliteit moet worden gecontroleerd. Ongeveer 5 %.
+
+Deze waarden worden bepaald aan de hand van drie criteria:
+
+* Validiteit van de 2D polygoon. Indien een 2D polygoon niet geometrisch valide is, krijgt de het de waarde 'discard'.
+* Actualiteit, met 3 opties:
+  * AHN is actueel en consistent met de BAG (keep);
+  * het BAG pand is nieuwer dan de punten wolk (discard) en kan dus geen hoogte krijgen;
+  * het AHN en BAG zijn ongeveer van hetzelfde tijdstip (review).
+* Puntdichtheid. Hierbij wordt voor ieder model het percentage oppervlakte berekend waarvoor punten worden gevonden. Een gebouw krijgt de waarde 'keep', als dit percentage groter is dan 50%. In alle andere gevallen krijgt het gebouw-model de waarde 'review'.
