@@ -2,7 +2,7 @@
 Het 3D Basisbestand Gebouwen bevat het gereconstrueerde 3D model van het BAG gebouw. De gebouwen die zich volledig ondergronds bevinden of boven één of meerdere andere gebouwen zweven, zijn gefilterd uit deze dataset. De ondergrondse delen van een gebouw zijn tijdens de reconstructie afgesneden en verwijderd.
 
 ## Opmerkingen over attributen
-- Waarden van het attribuut kwaliteits_klasse zijn nog niet definitief (d.w.z. dat het aantal klassen kan veranderen).
+- Waarden van het attribuut `kwaliteits_klasse` zijn nog niet definitief (d.w.z. dat het aantal klassen kan veranderen).
 
 ## Bekende issues met het 3D Basisbestand Gebouwen 
 Er wordt nog actief gewerkt aan de reconstructie methode voor LoD1.3 gebouwen. Momenteel zijn de volgende issues bekend:
