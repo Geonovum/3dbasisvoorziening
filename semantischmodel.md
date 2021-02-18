@@ -88,9 +88,9 @@ Attribute Name | `lod13_2d` | `lod13_3d` | Description
 ### Waardelijst kwaliteits_klasse
 waarde | betekenis
 -------|----------
-`keep` | Het model is te gebruiken.
-`discard` |	Het model is niet te gebruiken.
-`review` |	De kwaliteit moet worden gecontroleerd
+`keep` | Het model is te gebruiken. Dit geldt voor ongeveer 94% van de gebouwen.
+`discard` |	Het model is niet te gebruiken. Minder dan 1%.
+`review` |	De kwaliteit moet worden gecontroleerd. Ongeveer 5 %.
 
 Deze waarden worden bepaald aan de hand van drie criteria:
 
