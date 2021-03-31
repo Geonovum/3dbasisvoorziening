@@ -38,8 +38,14 @@ Attribuutnaam|Beschrijving
 `kas_warenhuis` | Het gebouw is een kas of warenhuis (volgens TOP10NL).
 `ondergronds_type` | Ondergrondse klasse van het gebouw. Zie onderstaande tabel.
 `rmse` | Root Mean Square Error van de reconstructie.
+`kwaliteits_klasse` | Indicatie van de bruikbaarheid
+
+Het attribuut `kwaliteits_klasse` is voor de 3D Basisbestand Gebouwen nog niet gevuld. Hier wordt nog onderzoek naar gedaan. 
 
 De attributen `dak_type` en `ondergronds_type` hebben als inhoud een gelimiteerde waardelijst. Zie daarvoor de onderstaande tabellen.
+
+Naast deze bovenstaande attributen worden ook een aantal BAG attributen meengenomen. 
+
 
 ### Waardelijst dak_type
 waarde | betekenis
@@ -72,7 +78,7 @@ Attribute Name | `lod13_2d` | `lod13_3d` | Description
 `dd_h_dak_70p`|x|	|NAP hoogte op dakniveau. Berekend als het 70ste percentiel van alle hoogtepunten op het corresponderende deel van het dak. Eenheid: meter
 `dd_h_dak_max`|x|	|NAP hoogte op dakniveau. Berekend als het maximum van alle hoogtepunten op het corresponderende deel van het dak. Eenheid: meter
 `dd_data_coverage`|x|	|Oppervlakte van het deel van het dak dat bedekt is met AHN3 punten.
-`dak_type`|x|x|Het soort dak van het gebouw. Zie [tabel met waarden](#waardelijst-dak_type).
+`dak_type`|x||Het soort dak van het gebouw. Zie [tabel met waarden](#waardelijst-dak_type).
 `pw_datum`|x|x|Inwinningsdatum van de puntenwolk. In het geval van AHN3 is dit de veronderstelde inwinningsdatum, die wordt vastgesteld op de 1e december in het jaar voorafgaand aan het officieel gerapporteerde inwinjaar van een specifieke AHN3 tegel.
 `pw_actueel`|x|x|Komt de datum van de puntenwolk overeen met het bouwjaar van het gebouw?
 `pw_bron`|x|x|Bron van de puntenwolk.
