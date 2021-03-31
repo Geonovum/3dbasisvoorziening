@@ -44,7 +44,7 @@ Het attribuut `kwaliteits_klasse` is voor de 3D Basisbestand Gebouwen nog niet g
 
 De attributen `dak_type` en `ondergronds_type` hebben als inhoud een gelimiteerde waardelijst. Zie daarvoor de onderstaande tabellen.
 
-Naast deze bovenstaande attributen worden ook een aantal BAG attributen meengenomen. 
+Naast deze bovenstaande attributen worden ook een aantal BAG attributen meegenomen. 
 
 
 ### Waardelijst dak_type
