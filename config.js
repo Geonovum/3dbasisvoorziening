@@ -13,11 +13,11 @@
 
 var respecConfig = 
 {
-  //specStatus: "GN-BASIS",
-  specStatus: "GN-WV",
+  specStatus: "GN-BASIS",
+  //specStatus: "GN-WV",
   specType: "AL",
   pubDomain: "3dbv",
-  //publishDate: "2020-10-09",
+  publishDate: "2021-03-31",
   previousPublishDate: "2020-10-09",
   previousMaturity: "GN-BASIS",
   editors: 
@@ -52,6 +52,11 @@ var respecConfig =
     },
     {
       name: "Bertjan Zwerver",
+      company: "Kadaster",
+      companyURL: "https://www.kadaster.nl/",
+    },
+    {
+      name: "Anouk Huisman",
       company: "Kadaster",
       companyURL: "https://www.kadaster.nl/",
     },
