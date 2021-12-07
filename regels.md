@@ -1,15 +1,15 @@
 # Methodes van inwinning, voorbewerking en reconstructie
 
-Voor het reconstrueren van de 3D data is gebruik gemaakt van 2D geometrieën uit de BAG en BGT en van hoogtegegevens die verkregen zijn uit puntenwolken. Voor het vervaardigen van puntenwolken zijn luchtfoto’s uit de winter van 2019 gebruikt. Aangezien bronhouders van de BGT en de BAG ook gebruik maken van deze luchtfoto’s om hun bestanden te actualiseren, hebben we een latere peildatum voor de BAG en BGT gekozen. Dit zorgt voor een zo klein mogelijk actualiteitsverschil tussen de hoogtegegevens en 2D geometrieën. Zie Tabel 1 voor meer informatie.
+Voor het reconstrueren van de 3D data is gebruik gemaakt van 2D geometrieën uit de BAG en BGT en van hoogtegegevens die verkregen zijn uit puntenwolken. Voor het vervaardigen van puntenwolken zijn luchtfoto’s uit de winter van 2020 gebruikt. Aangezien bronhouders van de BGT en de BAG ook gebruik maken van deze luchtfoto’s om hun bestanden te actualiseren, hebben we een latere peildatum voor de BAG en BGT gekozen. Dit zorgt voor een zo klein mogelijk actualiteitsverschil tussen de hoogtegegevens en 2D geometrieën. Zie Tabel 1 voor meer informatie.
 
 **Tabel 1:** actualiteit en toepassing van de brondata
 
 Brondata|Toepassing|Peildatum / inwinperiode
 --------|----------|------------------------
-BGT|Terrein|01-01-2020
-BAG|Gebouwen|01-01-2020
-Luchtfoto's|hoogtegegevens|winter 2019
-Luchtfoto's |infraroodgegevens ten behoeve classificatie van hoge vegetatie|zomer 2019
+BGT|Terrein|01-01-2021
+BAG|Gebouwen|01-01-2021
+Luchtfoto's|hoogtegegevens|winter 2020
+Luchtfoto's |infraroodgegevens ten behoeve classificatie van hoge vegetatie|zomer 2020
 
 ## Voorbewerking van BAG en BGT
 Om de objecten uit de BAG en de BGT als input te kunnen gebruiken voor het automatische reconstructieproces zijn een aantal voorbewerkingen uitgevoerd. Hierbij werden de objecten gevalideerd en verrijkt met informatie. Waar nodig werden de geometrieën van de objecten geïntegreerd met de geometrie van omliggende objecten. Hierbij moet worden opgemerkt dat niet alle geometrische bewerkingen correcties zijn op de BGT, maar dat het gaat om het geschikt maken van de data voor het 3D reconstructieproces. Hierdoor zijn de 2D objecten niet altijd meer dezelfde als in de oorspronkelijke BGT en BAG. 
@@ -30,14 +30,14 @@ Voor een goede 3D-reconstructie moeten de overbruggingssituaties voldoen aan <a 
 ## Het genereren van de puntenwolken
 Voor de reconstructie van 2D naar 3D zijn hoogtegegevens nodig voor twee dingen: voor de hoogtebepaling van BAG-panden, en voor de hoogtebepaling van de maaiveldobjecten (BGT). Deze hoogte wordt verkregen door het toepassen van [semi-global matching](https://en.wikipedia.org/wiki/Semi-global_matching) op de stereofoto’s die ingewonnen worden in de [landelijke voorziening beeldmateriaal](https://www.beeldmateriaal.nl/). Deze voorziening koopt voor de overheidspartijen in Nederland landsdekkend beeldmateriaal in voor het bijhouden van de basisregistraties BAG, BGT en de Basisregistratie Topografie (BRT). Voor de hoogtebepaling uit beeldmateriaal worden de stereofoto’s van de wintervlucht gebruikt. 
 
-**Tabel 2:** Kenmerken stereofoto’s 2019
+**Tabel 2:** Kenmerken stereofoto’s 2020
 
 Kenmerk|waarde|toelichting
 -------|------|-----------
-Ground Sampling Distance (GSD)|3-10,8cm
-Overlap in de strook|60%
+Ground Sampling Distance (GSD)|5-10,8cm
+Overlap in de strook|60% (deels 80%)
 Overlap tussen de stroken|30%
-Vlieghoogte|1000-4300m
+Vlieghoogte|1500-4300m
 
 De nauwkeurigheid van de resulterende hoogte wordt onder andere door de overlap in de strook en de vlieghoogte bepaald.
 
